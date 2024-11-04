@@ -13,5 +13,5 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "rg"
-  location = "West Europe"
+  location = "east Europe"
 }
