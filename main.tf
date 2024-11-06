@@ -1,26 +1,7 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = "3.116.0"
-    }
-  }
-}
-
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_resource_group" "rg" {
-  name     = "rg"
-  location = "east Europe"
-}
-
-resource "azurerm_resource_group" "rg1" {
-  name     = "rg1"
-  location = "central india"
-}
-resource "azurerm_resource_group" "rg1" {
-  name     = "rg2"
-  location = "centralcanada"
+  for_each   = var.rg
+  name       = each.value.rg_name
+  location   = each.value.location
+  tags       = each.value.tags
+  managed_by = each.value.managed_by
 }
