@@ -22,4 +22,14 @@ rg3 = {
       company = "devops"
     }
 }
+
+rg4 = {
+    rg_name  = "rg-vivek4"
+    location = "centralindia"
+    tags = {
+      env     = "production"
+      company = "devops"
+    }
+    managed_by = "terraform"
+  }
 }
